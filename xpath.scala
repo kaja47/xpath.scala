@@ -57,9 +57,9 @@ object Xpath {
       override def cast(x: AnyRef) = x.asInstanceOf[NodeList] map t.convert
     }
 
-  implicit def pimpNodeList1(nl: NodeList): Seq[Node] = (0 until nl.getLength map (nl item _))
-  implicit def pimpNodeList2(nl: NodeList) = new {
-    def getTextContent = pimpNodeList1(nl) map (_.getTextContent) mkString
+  implicit def enhanceNodeList1(nl: NodeList): Seq[Node] = (0 until nl.getLength map (nl item _))
+  implicit def enhanceNodeList2(nl: NodeList) = new {
+    def getTextContent = enhanceNodeList1(nl) map (_.getTextContent) mkString
   }
 
   /** When this method is invoked, it compiles xpath query and returns another function that do matching against this xpath.
