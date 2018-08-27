@@ -10,9 +10,9 @@ nicer and more typed.
 
 val xmlString = """<?xml version="1.0" encoding="utf-8"?>
 <channel>
-	<title>k47.cz</title>
-	<item><title>title 1</title><guid isPermaLink="true">https://k47.cz/article-1.html</guid><pubDate>Sun, 26 Aug 2018 00:00:00 +0200</pubDate></item>
-	<item><title>title 2</title><guid isPermaLink="true">https://k47.cz/article-2.html</guid><pubDate>Sun, 12 Jan 2018 01:00:00 +0200</pubDate></item>
+  <title>k47.cz</title>
+  <item><title>title 1</title><guid isPermaLink="true">https://k47.cz/article-1.html</guid><pubDate>Sun, 26 Aug 2018 00:00:00 +0200</pubDate></item>
+  <item><title>title 2</title><guid isPermaLink="true">https://k47.cz/article-2.html</guid><pubDate>Sun, 12 Jan 2018 01:00:00 +0200</pubDate></item>
 </channel>"""
 
 val builder = javax.xml.parsers.DocumentBuilderFactory.newInstance.newDocumentBuilder
@@ -31,9 +31,9 @@ val readTitle = xpath[String]("title")
 val readUrl   = xpath[String]("guid")
 
 val f = xpath[Seq[Node]]("//item[guid[@isPermaLink]]").andThen { nodes =>
-	nodes.map { n =>
-		Item(readTitle(n), readUrl(n))
-	}
+  nodes.map { n =>
+    Item(readTitle(n), readUrl(n))
+  }
 }
 
 // 3) perform query
