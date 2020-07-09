@@ -1,6 +1,6 @@
 ## Xpath.scala
 
-*Xpath.scala* is a simple tool to make dealing with Xpath in scala little bit
+*Xpath.scala* is a simple tool to make dealing with XPath in Scala little bit
 nicer and more typed.
 
 ### Example usage
